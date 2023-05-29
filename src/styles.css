@@ -3,10 +3,6 @@ body {
   background-color: #f0f0f0;
 }
 
-.stop-animation {
-  animation-play-state: paused !important;
-}
-
 .container {
   max-width: 600px;
   margin: 0 auto;
