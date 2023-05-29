@@ -54,7 +54,6 @@ function hideLoader() {
 function displayError() {
   Notiflix.Notify.failure('Сталася помилка. Будь ласка, спробуйте ще раз.');
 }
-
 // Робимо нивидимою помилку на сторінці.
 function hideError() {
   errorElement.style.display = 'none';
