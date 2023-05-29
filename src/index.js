@@ -1,6 +1,7 @@
 // Робимо імпорти
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 import './styles.css';
+import Notiflix from 'notiflix';
 
 // Звертаємось до елементів html
 const selectElement = document.getElementById('selectElement');
@@ -50,12 +51,12 @@ function hideLoader() {
 
 // Робимо видимою помилку на сторінці
 function displayError() {
-  errorElement.style.display = 'block';
+  Notiflix.Notify.failure('Сталася помилка. Будь ласка, спробуйте ще раз.');
 }
 
 // Робимо нивидимою помилку на сторінці
 function hideError() {
-  errorElement.style.display = 'none';
+  Notiflix.Notify.remove();
 }
 
 // Робимо відображення інфи в елементі catInfoElement та вказуємо в елементи html
