@@ -53,26 +53,3 @@ export function fetchCatByBreed(breedId) {
       })
   );
 }
-
-// export default { fetchBreeds, fetchCatByBreed };
-
-/**
-  |==================================
-
-   // // https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_1SLi0nwDKLs9tE67PgHRv7wAvhwYEp2lyKt4wusq54NRJSTrg81S8J9zXoQW5oKl
-
-// const URL =
-//   'https://api.thecatapi.com/v1/breeds';
-// const API_KEY =
-//   'live_1SLi0nwDKLs9tE67PgHRv7wAvhwYEp2lyKt4wusq54NRJSTrg81S8J9zXoQW5oKl';
-
-// function fetchBreeds(query) {
-//   return fetch(`${URL}?apiKey=${API_KEY}&katze=${query}`).then(res =>
-//     res.json()
-//   );
-// }
-
-// export default { fetchBreeds };
-
-  |==================================
-*/

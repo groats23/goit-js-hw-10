@@ -1,8 +1,7 @@
 // Робимо імпорти.
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
-// import catAPI from './cat-api.js';
 import './styles.css';
-// import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 
 // Звертаємось до елементів html.
 const selectElement = document.getElementById('selectElement');
@@ -75,31 +74,3 @@ function displayCatInfo(cat) {
 }
 
 hideError();
-
-// function hideCatInfo() {
-//   catInfoElement.innerHTML = '';
-//   catInfoElement.style.display = 'none';
-// }
-
-// // Спочатку приховуємо інформацію про завантажувач, помилку і cat
-// hideLoader();
-// hideError();
-// hideCatInfo();
-
-/**
-  |==================================
-
-   // import API from './cat-api.js';
-
-// API.onSearchKatze('katze-all').then(result => console.log(result));
-
-// const refs = {
-//   breedSelect: document.querySelector('#selectElement'),
-//   catsWrapper: document.querySelector('.cat-info'),
-//   loader: document.querySelector('.loader'),
-//   error: document.querySelector('.error'),
-// };
-
-
-  |==================================
-*/
