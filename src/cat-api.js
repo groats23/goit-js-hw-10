@@ -54,6 +54,8 @@ export function fetchCatByBreed(breedId) {
   );
 }
 
+// export default { fetchBreeds, fetchCatByBreed };
+
 /**
   |==================================
 

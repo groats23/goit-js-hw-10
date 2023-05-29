@@ -1,7 +1,8 @@
 // Робимо імпорти.
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
+// import catAPI from './cat-api.js';
 import './styles.css';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 
 // Звертаємось до елементів html.
 const selectElement = document.getElementById('selectElement');
@@ -10,6 +11,7 @@ const errorElement = document.querySelector('.error');
 const catInfoElement = document.querySelector('.cat-info');
 
 // Отримаємо списоккотів
+
 fetchBreeds()
   // Приймаємо список з параметром breeds. Створюємо новіелементи.
   .then(breeds => {
@@ -56,13 +58,13 @@ function displayError() {
 
 // Робимо нивидимою помилку на сторінці.
 function hideError() {
-  Notiflix.Notify.remove();
+  errorElement.style.display = 'none';
 }
 
 // Робимо відображення інфи в елементі catInfoElement та вказуємо в елементи html.
 // Побачимо зображення кота, назву породи, опис та темперамент.
 function displayCatInfo(cat) {
-  loaderElement.innerHTML = '';
+  loaderElement.style.display = 'none';
   catInfoElement.innerHTML = `
     <img src="${cat.url}" alt="Cat Image">
     <h3>${cat.breeds[0].name}</h3>
@@ -71,6 +73,8 @@ function displayCatInfo(cat) {
   `;
   catInfoElement.style.display = 'block';
 }
+
+hideError();
 
 // function hideCatInfo() {
 //   catInfoElement.innerHTML = '';
