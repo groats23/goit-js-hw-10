@@ -20,13 +20,6 @@ export function fetchBreeds() {
         }
         return response.json();
       })
-      // Перебераємо та витягуємо з оюєктів що нам потрібно
-      .then(data => {
-        return data.map(breed => ({
-          id: breed.id,
-          name: breed.name,
-        }));
-      })
   );
 }
 
@@ -35,21 +28,14 @@ export function fetchCatByBreed(breedId) {
   const URL = `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`;
 
   // Получаємо список з значенням нашого ключа
-  return (
-    fetch(URL, {
-      headers: {
-        'x-api-key': API_KEY,
-      },
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch cat');
-        }
-        return response.json();
-      })
-      // Обробляємо та повертаємо тіки першийобєкт з масиву
-      .then(data => {
-        return data[0];
-      })
-  );
+  return fetch(URL, {
+    headers: {
+      'x-api-key': API_KEY,
+    },
+  }).then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to fetch cat');
+    }
+    return response.json();
+  });
 }

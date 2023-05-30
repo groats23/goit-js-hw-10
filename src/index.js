@@ -9,9 +9,18 @@ const loaderElement = document.querySelector('.loader');
 const errorElement = document.querySelector('.error');
 const catInfoElement = document.querySelector('.cat-info');
 
-// Отримаємо списоккотів
+// Показуємо лоадер на початку
+showLoader();
 
+// Отримаємо списоккотів
 fetchBreeds()
+  // Перебераємо та витягуємо з обєктів що нам потрібно
+  .then(data => {
+    return data.map(breed => ({
+      id: breed.id,
+      name: breed.name,
+    }));
+  })
   // Приймаємо список з параметром breeds. Створюємо новіелементи.
   .then(breeds => {
     breeds.forEach(breed => {
@@ -21,6 +30,9 @@ fetchBreeds()
       selectElement.appendChild(option);
     });
 
+    // Залишаємо поле пошуку порожнім
+    // selectElement.value = '';
+
     // Робимо слухача подій для вибора породи кота.
     selectElement.addEventListener('change', () => {
       const breedId = selectElement.value;
@@ -28,6 +40,10 @@ fetchBreeds()
       hideError();
       // Запит для полученняінфи про кота.
       fetchCatByBreed(breedId)
+        // Обробляємо та повертаємо тіки першийобєкт з масиву
+        .then(data => {
+          return data[0];
+        })
         .then(cat => displayCatInfo(cat))
         .catch(error => displayError());
     });
